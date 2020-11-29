@@ -6,7 +6,6 @@
         <mdb-badge @click.native="onDelete" tag="a" color="danger-color" class="ml-2 float-right">-</mdb-badge>
         <h6 v-if="title" class="mt-0 font-weight-bold">{{title}}</h6>
         <hr class="hr-bold my-2">
-
         <p v-if="location" class="font-smaller mb-0">
           <mdb-icon icon="location-arrow"/> {{location}}
         </p>
