@@ -84,7 +84,7 @@
         </form>
       </mdb-modal-body>
       <mdb-modal-footer class="justify-content-center">
-        <mdb-btn color="info">Add</mdb-btn>
+        <mdb-btn @click.native="addEvent" color="info">Add</mdb-btn>
       </mdb-modal-footer>
     </mdb-modal>
   </mdb-container>
@@ -159,8 +159,8 @@ export default {
       title: this.newValues["title"],
       location: this.newValues["location"],
       description: this.newValues["description"]
-    });
-}
+      });
+    }
   }
 
 };
