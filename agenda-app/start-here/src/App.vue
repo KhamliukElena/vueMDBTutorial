@@ -105,6 +105,7 @@ import Notification from '@/components/Notification';
 export default {
   name: "App",
   components: {
+    Notification,
     mdbContainer,
     mdbRow,
     mdbCol,
@@ -117,8 +118,7 @@ export default {
     mdbModalBody,
     mdbModalFooter,
     mdbInput,
-    mdbTextarea,
-    Notification
+    mdbTextarea
   },
   data() {
     return {
