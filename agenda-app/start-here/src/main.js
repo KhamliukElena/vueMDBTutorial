@@ -13,3 +13,13 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(reg => {
+      console.log(reg);
+    });
+  });
+} else {
+  console.log('Service Worker not supported :(');
+}
