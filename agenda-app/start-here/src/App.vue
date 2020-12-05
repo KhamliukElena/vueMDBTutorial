@@ -1,5 +1,6 @@
 <template>
   <mdb-container>
+    <Notification :status="status" />
     <mdb-row>
       <mdb-col col="9">
         <h2 class="text-uppercase my-3">Today:</h2>
@@ -99,7 +100,8 @@ import { mdbContainer, mdbRow, mdbCol, mdbIcon, mdbBtn, mdbModal,
   mdbInput,
   mdbTextarea
 } from "mdbvue";
-import Event from "@/components/Event"
+import Event from "@/components/Event";
+import Notification from '@/components/Notification';
 export default {
   name: "App",
   components: {
@@ -115,7 +117,8 @@ export default {
     mdbModalBody,
     mdbModalFooter,
     mdbInput,
-    mdbTextarea
+    mdbTextarea,
+    Notification
   },
   data() {
     return {
@@ -143,8 +146,17 @@ export default {
         }
       ],
       modal: false,
-      newValues: []
+      newValues: [],
+      status: ''
     };
+  },
+  created() {
+    window.addEventListener('online', () => {
+      this.status = 'online';
+    });
+    window.addEventListener('offline', () => {
+      this.status = 'offline';
+    });
   },
   methods: {
     handleDelete(eventIndex) {
